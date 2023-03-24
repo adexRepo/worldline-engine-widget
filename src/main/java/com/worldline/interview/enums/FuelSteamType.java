@@ -1,5 +1,5 @@
 package com.worldline.interview.enums;
 
-public enum FuelSteamType implements Fuel<FuelCombustionType>{
+public enum FuelSteamType implements Fuel<FuelSteamType>{
     WOOD, COAL
 }
