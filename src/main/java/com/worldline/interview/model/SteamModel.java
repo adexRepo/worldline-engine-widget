@@ -1,21 +1,18 @@
 package com.worldline.interview.model;
 
-import com.worldline.interview.fuels.FuelSteamType;
+import com.worldline.interview.enums.FuelSteamType;
 
-import lombok.Data;
-
-@Data
-public class SteamModel {
-
-    public final int batchSize = 8;
-    public double cost;
+public class SteamModel extends ModelEngine<FuelSteamType>{
 
     public SteamModel(FuelSteamType typeFuel) {
         if (typeFuel == FuelSteamType.COAL) {
-            this.cost = 4.35;
+            super.setCost(4.35);
         } else if (typeFuel == FuelSteamType.WOOD) {
-            this.cost = 5.65;
-        }    
+            super.setCost(5.65);
+        }
+
+        super.setFuelType(typeFuel);
+        super.setBatchSize(2);
     }
 
 }
