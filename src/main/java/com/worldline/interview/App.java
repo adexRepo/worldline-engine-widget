@@ -1,9 +1,24 @@
 package com.worldline.interview;
 
+import com.worldline.interview.engine.Engine;
+import com.worldline.interview.enums.FuelCombustionType;
+// import com.worldline.interview.enums.FuelSteamType;
+import com.worldline.interview.widget.WidgetMachine;
+
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args ) throws ClassNotFoundException
     {
-        System.out.println( "Hello World!" );
+
+        // Test 1
+        // Engine engine = new Engine(FuelSteamType.COAL);
+        // engine.fill(FuelSteamType.COAL, 60);
+
+        // Test 2
+        Engine engine = new Engine(FuelCombustionType.DIESEL);
+        engine.fill(FuelCombustionType.DIESEL, 60);
+        
+        WidgetMachine widgetMachine = new WidgetMachine(engine);
+        widgetMachine.produceWidgets(4);
     }
 }

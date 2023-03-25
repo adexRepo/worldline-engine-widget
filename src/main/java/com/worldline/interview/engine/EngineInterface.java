@@ -1,6 +1,6 @@
 package com.worldline.interview.engine;
 
-public interface EngineInterface<T> {
+public interface EngineInterface<Fuel> {
 
     public void start();
 
@@ -8,8 +8,6 @@ public interface EngineInterface<T> {
 
     public boolean isRunning();
 
-    public void fill(T fuelType, int fuelLevel);
-
-    public T getFuelType();
+    public void fill(Fuel fuelType,int fuelLevel);
 
 }

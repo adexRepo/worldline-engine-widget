@@ -1,15 +1,12 @@
 package com.worldline.interview.widget;
 
-import com.worldline.interview.engine.EngineConcrete;
-import com.worldline.interview.model.ModelEngine;
+import com.worldline.interview.engine.Engine;
 
 public class WidgetMachine {
 
-    private ModelEngine<?> model;
-    private EngineConcrete<?> engine;
+    public Engine engine;
 
-    public WidgetMachine(ModelEngine<?> model, EngineConcrete<?> engine) {
-        this.model = model;
+    public WidgetMachine(Engine engine) {
         this.engine = engine;
     }
 
@@ -23,23 +20,22 @@ public class WidgetMachine {
 
         engine.stop();
 
+        System.out.println("cost: " + cost);
         return cost;
     }
 
     private double produce(int quantity) {
         int batch = 0;
         int batchCount = 0;
-        double costPerBatch = model.getCost();
+        double costPerBatch = engine.getModelEngine().getCost();
 
         while (batch < quantity) {
-            batch = batch + model.getBatchSize();
+            batch = batch + engine.getModelEngine().getBatchSize();
             batchCount++;
         }
 
-        double  batchCountDbl = batchCount;
+        double batchCountDbl = batchCount;
         return batchCountDbl * costPerBatch;
     }
-
-
 
 }

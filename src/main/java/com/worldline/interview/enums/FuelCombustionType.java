@@ -1,5 +1,5 @@
 package com.worldline.interview.enums;
 
-public enum FuelCombustionType implements Fuel<FuelCombustionType>{
+public enum FuelCombustionType implements Fuel{
     PETROL,DIESEL
 }
