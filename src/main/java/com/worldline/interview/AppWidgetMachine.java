@@ -1,11 +1,11 @@
 package com.worldline.interview;
 
 import com.worldline.interview.engine.Engine;
-import com.worldline.interview.enums.FuelCombustionType;
+import com.worldline.interview.fuel.FuelCombustionType;
 // import com.worldline.interview.enums.FuelSteamType;
 import com.worldline.interview.widget.WidgetMachine;
 
-public class App 
+public class AppWidgetMachine 
 {
     public static void main( String[] args ) throws ClassNotFoundException
     {

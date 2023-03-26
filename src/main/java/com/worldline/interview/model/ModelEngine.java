@@ -1,7 +1,7 @@
 package com.worldline.interview.model;
 
-import com.worldline.interview.enums.FuelCombustionType;
-import com.worldline.interview.enums.FuelSteamType;
+import com.worldline.interview.fuel.FuelCombustionType;
+import com.worldline.interview.fuel.FuelSteamType;
 
 import lombok.Data;
 
@@ -25,9 +25,9 @@ public class ModelEngine<Fuel> {
         } else if (type.contains("FuelSteamType")) {
             this.batchSize = 2;
             if (fuelType == FuelSteamType.COAL) {
-                this.cost = 9;
+                this.cost = 4.35;
             } else if (fuelType == FuelSteamType.WOOD) {
-                this.cost = 12;
+                this.cost = 5.65;
             }
         } else {
             throw new IllegalStateException("Not able to start engine.");

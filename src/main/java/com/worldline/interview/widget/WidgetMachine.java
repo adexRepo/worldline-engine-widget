@@ -21,6 +21,8 @@ public class WidgetMachine {
         engine.stop();
 
         System.out.println("cost: " + cost);
+        cost = Math.round(cost * 100.0) / 100.0;
+
         return cost;
     }
 

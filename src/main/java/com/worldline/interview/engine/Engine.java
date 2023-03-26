@@ -1,6 +1,6 @@
 package com.worldline.interview.engine;
 
-import com.worldline.interview.enums.Fuel;
+import com.worldline.interview.fuel.Fuel;
 import com.worldline.interview.model.ModelEngine;
 
 import lombok.Data;
@@ -30,8 +30,8 @@ public class Engine implements EngineInterface<Fuel> {
         this.running = false;
         this.fuelLevel = 0;
 
-        var cs = requiredFuelType.getClass();
-        this.modelEngine = new ModelEngine<>(cs.getName(),requiredFuelType);
+        var fuel = requiredFuelType.getClass();
+        this.modelEngine = new ModelEngine<>(fuel.getName(),requiredFuelType);
     }
 
     @Override
@@ -46,11 +46,6 @@ public class Engine implements EngineInterface<Fuel> {
     @Override
     public void stop() {
         running = false;
-    }
-
-    @Override
-    public boolean isRunning() {
-        return running;
     }
 
     @Override

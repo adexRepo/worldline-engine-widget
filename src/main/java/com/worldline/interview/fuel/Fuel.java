@@ -1,4 +1,4 @@
-package com.worldline.interview.enums;
+package com.worldline.interview.fuel;
 
 public interface Fuel {
     // just for contract
